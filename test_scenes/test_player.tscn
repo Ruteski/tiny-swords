@@ -1,0 +1,124 @@
+[gd_scene load_steps=3 format=3 uid="uid://42ab85yncef4"]
+
+[ext_resource type="Texture2D" uid="uid://7a4bf4dlobvx" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_2r27y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oei68"]
+line_spacing = 67.0
+font_size = 51
+
+[node name="TestPlayer" type="Node2D"]
+
+[node name="WarriorBlue" type="Sprite2D" parent="."]
+position = Vector2(1826, 911)
+texture = ExtResource("1_2r27y")
+
+[node name="Label" type="Label" parent="WarriorBlue"]
+offset_left = 649.0
+offset_top = -717.0
+offset_right = 811.0
+offset_bottom = -647.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "idle
+"
+label_settings = SubResource("LabelSettings_oei68")
+
+[node name="Label9" type="Label" parent="WarriorBlue"]
+offset_left = -513.0
+offset_top = -880.0
+offset_right = 267.0
+offset_bottom = -810.0
+scale = Vector2(1.37512, 1.42552)
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "0         1        2         3        4         5"
+label_settings = SubResource("LabelSettings_oei68")
+
+[node name="Label10" type="Label" parent="WarriorBlue"]
+offset_left = -615.0
+offset_top = -748.0
+offset_right = -569.0
+offset_bottom = 288.0
+scale = Vector2(1.37512, 1.42552)
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "01234567"
+label_settings = SubResource("LabelSettings_oei68")
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="WarriorBlue"]
+offset_left = 642.0
+offset_top = -504.0
+offset_right = 804.0
+offset_bottom = -434.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "run
+"
+label_settings = SubResource("LabelSettings_oei68")
+
+[node name="Label3" type="Label" parent="WarriorBlue"]
+offset_left = 647.0
+offset_top = -325.0
+offset_right = 1242.0
+offset_bottom = -242.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "attack_side_right_down
+"
+label_settings = SubResource("LabelSettings_oei68")
+
+[node name="Label4" type="Label" parent="WarriorBlue"]
+offset_left = 647.0
+offset_top = -141.0
+offset_right = 1176.0
+offset_bottom = -60.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "attack_side_right_up
+"
+label_settings = SubResource("LabelSettings_oei68")
+
+[node name="Label5" type="Label" parent="WarriorBlue"]
+offset_left = 647.0
+offset_top = 59.0
+offset_right = 1242.0
+offset_bottom = 142.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "attack_side_down_left
+"
+label_settings = SubResource("LabelSettings_oei68")
+
+[node name="Label6" type="Label" parent="WarriorBlue"]
+offset_left = 647.0
+offset_top = 243.0
+offset_right = 1220.0
+offset_bottom = 324.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "attack_side_down_right
+"
+label_settings = SubResource("LabelSettings_oei68")
+
+[node name="Label7" type="Label" parent="WarriorBlue"]
+offset_left = 647.0
+offset_top = 435.0
+offset_right = 1166.0
+offset_bottom = 518.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "attack_side_up_right
+"
+label_settings = SubResource("LabelSettings_oei68")
+
+[node name="Label8" type="Label" parent="WarriorBlue"]
+offset_left = 638.0
+offset_top = 602.0
+offset_right = 1123.0
+offset_bottom = 683.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "attack_side_up_left
+"
+label_settings = SubResource("LabelSettings_oei68")
