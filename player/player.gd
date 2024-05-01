@@ -28,6 +28,8 @@ var attack_cooldown: float = 0.0
 
 # update da unity
 func _process(delta: float) -> void:
+	GameManager.player_position = position
+	
 	read_input()
 	
 	update_attack_cooldown(delta)
