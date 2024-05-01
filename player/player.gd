@@ -30,12 +30,12 @@ var attack_cooldown: float = 0.0
 func _process(delta: float) -> void:
 	read_input()
 	
-	#update_attack_cooldown(delta)
+	update_attack_cooldown(delta)
 	if Input.is_action_just_pressed("attack"):
 		attack()
 	
-	rotate_sprite(input_vector)
-	play_animation(input_vector)
+	rotate_sprite()
+	play_animation()
 
 
 func update_attack_cooldown(delta: float) -> void:
@@ -74,7 +74,7 @@ func read_input() -> void:
 	is_running = not input_vector.is_zero_approx()
 
 
-func play_animation(input_vector: Vector2) -> void:
+func play_animation() -> void:
 	if not is_attacking:
 		if was_running != is_running:
 			if is_running:
@@ -83,7 +83,7 @@ func play_animation(input_vector: Vector2) -> void:
 				animation_player.play("idle")
 
 
-func rotate_sprite(input_vector: Vector2) -> void:
+func rotate_sprite() -> void:
 	if input_vector.x > 0:
 		sprite.flip_h = false
 	elif input_vector.x < 0:
