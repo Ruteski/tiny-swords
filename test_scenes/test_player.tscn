@@ -126,3 +126,4 @@ label_settings = SubResource("LabelSettings_oei68")
 
 [node name="Player" parent="." instance=ExtResource("2_kb7gr")]
 position = Vector2(214, 222)
+motion_mode = 1
