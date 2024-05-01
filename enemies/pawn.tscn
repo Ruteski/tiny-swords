@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://5qodwsvr7aug"]
+
+[ext_resource type="Texture2D" uid="uid://8x4hec6naplh" path="res://addons/Tiny Swords/Factions/Knights/Troops/Pawn/Red/Pawn_Red.png" id="1_tqp4y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hho8x"]
+atlas = ExtResource("1_tqp4y")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4q6w7"]
+atlas = ExtResource("1_tqp4y")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2np2"]
+atlas = ExtResource("1_tqp4y")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vbad"]
+atlas = ExtResource("1_tqp4y")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r27f8"]
+atlas = ExtResource("1_tqp4y")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rd7is"]
+atlas = ExtResource("1_tqp4y")
+region = Rect2(960, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uxx84"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hho8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4q6w7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2np2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vbad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r27f8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rd7is")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gdtsj"]
+radius = 21.0
+height = 52.0
+
+[node name="Pawn" type="CharacterBody2D"]
+motion_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -27)
+sprite_frames = SubResource("SpriteFrames_uxx84")
+autoplay = "default"
+frame = 3
+frame_progress = 0.625664
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -27)
+shape = SubResource("CapsuleShape2D_gdtsj")
+debug_color = Color(0, 0.6, 0.701961, 0.270588)
