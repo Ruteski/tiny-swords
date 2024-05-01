@@ -130,4 +130,4 @@ position = Vector2(214, 222)
 motion_mode = 1
 
 [node name="Pawn" parent="." instance=ExtResource("3_ocbb0")]
-position = Vector2(311, 235)
+position = Vector2(949, 546)
