@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://co52d0kusajy3"]
+
+[ext_resource type="PackedScene" uid="uid://bmkbr783kti7e" path="res://player/player.tscn" id="1_gg57r"]
+
+[node name="TestUi" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_gg57r")]
+position = Vector2(522, 380)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_top = 20.0
+offset_right = 31.0
+offset_bottom = 43.0
+grow_horizontal = 2
+size_flags_horizontal = 8
+text = "08:50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -223.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 47.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+
+[node name="GoldLabel" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 7.605
+offset_top = -11.5
+offset_right = 98.6052
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "20.000 Gold
+"
+
+[node name="MeetLabel" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.27
+offset_top = -11.5
+offset_right = -36.27
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+text = "50 Meet
+"

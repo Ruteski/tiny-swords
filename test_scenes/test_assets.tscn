@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dkitv7blkln55"]
+[gd_scene load_steps=45 format=3 uid="uid://dkitv7blkln55"]
 
 [ext_resource type="Texture2D" uid="uid://ensldm5hntgi" path="res://addons/Tiny Swords/Terrain/Ground/Shadows.png" id="1_tqvf2"]
 [ext_resource type="Texture2D" uid="uid://u072wu6cfb5n" path="res://addons/Tiny Swords/Terrain/Ground/Tilemap_Elevation.png" id="2_u7440"]
@@ -37,6 +37,13 @@
 [ext_resource type="Texture2D" uid="uid://bi4sq7jww7phx" path="res://addons/Tiny Swords/Factions/Goblins/Buildings/Wood_Tower/Wood_Tower_Destroyed.png" id="35_sywlv"]
 [ext_resource type="Texture2D" uid="uid://b60h8bbrcstl8" path="res://addons/Tiny Swords/Factions/Goblins/Buildings/Wood_Tower/Wood_Tower_InConstruction.png" id="36_2avk8"]
 [ext_resource type="Texture2D" uid="uid://cbkea84f83wrq" path="res://addons/Tiny Swords/Factions/Goblins/Buildings/Wood_Tower/Wood_Tower_Purple.png" id="37_f5vav"]
+[ext_resource type="Texture2D" uid="uid://8ghy34f8nje0" path="res://addons/Tiny Swords/UI/Buttons/Button_Blue.png" id="38_efoqu"]
+[ext_resource type="Texture2D" uid="uid://bw2w6qxaoa11f" path="res://addons/Tiny Swords/UI/Buttons/Button_Blue_3Slides.png" id="39_ss7ue"]
+[ext_resource type="Texture2D" uid="uid://cwhvdrd7gd2pq" path="res://addons/Tiny Swords/UI/Banners/Carved_9Slides.png" id="40_v18vm"]
+[ext_resource type="Texture2D" uid="uid://bn1bvl4y0ljv0" path="res://addons/Tiny Swords/UI/Banners/Banner_Vertical.png" id="41_0146y"]
+[ext_resource type="Texture2D" uid="uid://cyk28lcqu1oug" path="res://addons/Tiny Swords/UI/Ribbons/Ribbon_Blue_3Slides.png" id="42_7op87"]
+[ext_resource type="Texture2D" uid="uid://7mym1mdf8o7f" path="res://addons/Tiny Swords/UI/Pointers/02.png" id="43_5oceu"]
+[ext_resource type="Texture2D" uid="uid://rq3nfmdrp3q7" path="res://addons/Tiny Swords/UI/Pointers/01.png" id="44_sxd4t"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -187,3 +194,31 @@ texture = ExtResource("36_2avk8")
 [node name="WoodTowerPurple" type="Sprite2D" parent="."]
 position = Vector2(3131, 3093)
 texture = ExtResource("37_f5vav")
+
+[node name="ButtonBlue" type="Sprite2D" parent="."]
+position = Vector2(1540, 1005)
+texture = ExtResource("38_efoqu")
+
+[node name="ButtonBlue3Slides" type="Sprite2D" parent="."]
+position = Vector2(1721, 1015)
+texture = ExtResource("39_ss7ue")
+
+[node name="Carved9Slides" type="Sprite2D" parent="."]
+position = Vector2(1994, 1031)
+texture = ExtResource("40_v18vm")
+
+[node name="BannerVertical" type="Sprite2D" parent="."]
+position = Vector2(2194, 1002)
+texture = ExtResource("41_0146y")
+
+[node name="RibbonBlue3Slides" type="Sprite2D" parent="."]
+position = Vector2(2394, 986)
+texture = ExtResource("42_7op87")
+
+[node name="02" type="Sprite2D" parent="."]
+position = Vector2(2341, 1082)
+texture = ExtResource("43_5oceu")
+
+[node name="01" type="Sprite2D" parent="."]
+position = Vector2(2429, 1059)
+texture = ExtResource("44_sxd4t")
