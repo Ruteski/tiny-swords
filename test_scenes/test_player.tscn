@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://42ab85yncef4"]
+[gd_scene load_steps=6 format=3 uid="uid://42ab85yncef4"]
 
 [ext_resource type="Texture2D" uid="uid://7a4bf4dlobvx" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_2r27y"]
 [ext_resource type="PackedScene" uid="uid://bmkbr783kti7e" path="res://player/player.tscn" id="2_kb7gr"]
 [ext_resource type="PackedScene" uid="uid://5qodwsvr7aug" path="res://enemies/pawn.tscn" id="3_ocbb0"]
+[ext_resource type="PackedScene" uid="uid://bbn7ujtrunw6c" path="res://misc/meat.tscn" id="4_i3sy2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oei68"]
 line_spacing = 67.0
@@ -131,3 +132,6 @@ motion_mode = 1
 
 [node name="Pawn" parent="." instance=ExtResource("3_ocbb0")]
 position = Vector2(949, 546)
+
+[node name="Meat" parent="." instance=ExtResource("4_i3sy2")]
+position = Vector2(411, 410)

@@ -258,9 +258,11 @@ radius = 89.97
 radius = 6.23234
 height = 17.7338
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_sne30")
 death_prefab = ExtResource("2_vgyfb")
+hitbox_cooldown = 0.7
+health = 50
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, -33)
