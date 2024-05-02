@@ -7,24 +7,31 @@ extends CharacterBody2D
 @onready var sword_area: Area2D = $SwordArea
 @onready var hitbox_area: Area2D = $HitboxArea
 
-
+@export_category("Movement")
 @export var speed: int = 3 # ou coloco 3 e multiplico la embaixo por 100?
 @export var speed_factor: float = 100.0
 @export_range(0,1) var lerp_factor: float = 0.2
+
+@export_category("Damage")
 @export var sword_damage: int = 2
 @export var death_prefab: PackedScene
 @export var hitbox_cooldown: float = 0.0
 
-@export_group("Health")
+@export_category("Ritual")
+@export var ritual_damage: int = 1
+@export var ritual_interval: float = 30
+@export var ritual_scene: PackedScene
+
+@export_group("Life")
 @export var health: int = 100
 @export var max_health: int = 100
-
 
 var input_vector: Vector2 = Vector2.ZERO
 var is_running: bool = false
 var was_running: bool = false
 var is_attacking: bool = false
 var attack_cooldown: float = 0.0
+var ritual_cooldown: float = 0.0
 
 
 # update da unity
@@ -57,6 +64,10 @@ func _process(delta: float) -> void:
 	
 	# Processa dano
 	update_hitbox_detection(delta)
+	
+	# Ritual
+	update_ritual(delta)
+	
 
 
 func update_attack_cooldown(delta: float) -> void:
@@ -192,3 +203,19 @@ func heal(amount: int) -> int:
 		health = max_health
 	print("Vida do Player: ",  health)
 	return health
+
+
+func update_ritual(delta: float) -> void:
+	ritual_cooldown -= delta
+	if ritual_cooldown > 0:
+		return
+	
+	ritual_cooldown = ritual_interval
+	
+	# criar o ritual
+	var ritual = ritual_scene.instantiate()
+	ritual.damage_amount = ritual_damage
+	# coloco o ritual dentro do player, como filho
+	# como o ritual esta no 0,0 sempre vai acompanhar o position do player
+	add_child(ritual)
+	
