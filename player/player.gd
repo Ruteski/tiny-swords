@@ -3,12 +3,16 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var sword_area: Area2D = $SwordArea
+@onready var hitbox_area: Area2D = $HitboxArea
 
 
 @export var speed: int = 3 # ou coloco 3 e multiplico la embaixo por 100?
 @export var speed_factor: float = 100.0
 @export_range(0,1) var lerp_factor: float = 0.2
 @export var sword_damage: int = 2
+@export var health: int = 100
+@export var death_prefab: PackedScene
+@export var hitbox_cooldown: float = 0.0
 
 
 var input_vector: Vector2 = Vector2.ZERO
@@ -16,6 +20,7 @@ var is_running: bool = false
 var was_running: bool = false
 var is_attacking: bool = false
 var attack_cooldown: float = 0.0
+
 
 # update da unity
 #func _process(delta: float) -> void:
@@ -44,6 +49,9 @@ func _process(delta: float) -> void:
 		rotate_sprite()
 		
 	play_animation()
+	
+	# Processa dano
+	update_hitbox_detection(delta)
 
 
 func update_attack_cooldown(delta: float) -> void:
@@ -127,3 +135,49 @@ func deal_damage_to_enemies() -> void:
 			# limita a area que o inimigo esta pra dar o dano nele
 			if dot_product >= .5: 
 				enemy.damage(sword_damage)
+
+
+func damage(amount: int) -> void:
+	if health <= 0:
+		return
+
+	health -= amount
+	print("Player recebeu danos de: ", amount, ". A vida total é de: ", health)
+	
+	# Piscar node
+	modulate = Color.RED
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_IN)
+	tween.set_trans(Tween.TRANS_QUINT)
+	tween.tween_property(self, "modulate", Color.WHITE, 0.3)
+		
+	if health <= 0:
+		die()
+
+
+func update_hitbox_detection(delta: float) -> void:
+	hitbox_cooldown -= delta
+	if hitbox_cooldown > 0:
+		return
+		
+	# frequencia
+	hitbox_cooldown = 0.5
+	
+	var bodies = hitbox_area.get_overlapping_bodies()
+	for body in bodies:
+		if body.is_in_group("enemies"):
+			var enemy: Enemy = body
+			var damage_amount = enemy.deal_damage_amount
+			damage(damage_amount)
+
+
+func die() -> void:
+	if death_prefab:
+		var death_object = death_prefab.instantiate()
+		death_object.position = position
+		get_parent().add_child(death_object)
+		
+	queue_free()
+
+
+

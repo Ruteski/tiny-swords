@@ -60,7 +60,7 @@ radius = 26.0
 height = 60.0
 
 [node name="Goblin" type="CharacterBody2D" groups=["enemies"]]
-scale = Vector2(1.61845, 1.61845)
+scale = Vector2(1.34546, 1.76529)
 motion_mode = 1
 script = ExtResource("1_8bpgc")
 health = 20
@@ -74,6 +74,7 @@ frame = 2
 frame_progress = 0.190067
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -24)
 shape = SubResource("CapsuleShape2D_gdtsj")
 debug_color = Color(0, 0.6, 0.701961, 0.270588)

@@ -5,6 +5,7 @@ extends Node2D
 
 @export var health: int = 10
 @export var death_prefab: PackedScene
+@export var deal_damage_amount: int = 2
 
 
 func damage(amount: int) -> void:
