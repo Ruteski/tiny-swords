@@ -9,7 +9,7 @@ extends Node2D
 
 func damage(amount: int) -> void:
 	health -= amount
-	print("Inimigo recebeu danos de: ", amount, ". A vida total é de: ", health)
+	# print("Inimigo recebeu danos de: ", amount, ". A vida total é de: ", health)
 	
 	# Piscar node
 	modulate = Color.RED
