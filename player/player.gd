@@ -3,9 +3,12 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
 
+
 @export var speed: int = 3 # ou coloco 3 e multiplico la embaixo por 100?
 @export var speed_factor: float = 100.0
 @export_range(0,1) var lerp_factor: float = 0.2
+@export var sword_damage: int = 2
+
 
 var input_vector: Vector2 = Vector2.ZERO
 var is_running: bool = false
@@ -100,4 +103,10 @@ func attack() -> void:
 	attack_cooldown = 0.6
 	is_attacking = true
 
+
+func deal_damage_to_enemies() -> void:
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	
+	for enemy in enemies:
+		enemy.damage(sword_damage)
 
