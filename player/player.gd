@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var sword_area: Area2D = $SwordArea
 
 
 @export var speed: int = 3 # ou coloco 3 e multiplico la embaixo por 100?
@@ -105,8 +106,8 @@ func attack() -> void:
 
 
 func deal_damage_to_enemies() -> void:
-	var enemies = get_tree().get_nodes_in_group("enemies")
-	
-	for enemy in enemies:
-		enemy.damage(sword_damage)
-
+	var bodies = sword_area.get_overlapping_bodies()
+	for body in bodies:
+		if body.is_in_group("enemies"):
+			var enemy: Enemy = body
+			enemy.damage(sword_damage)
