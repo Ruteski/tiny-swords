@@ -39,8 +39,10 @@ func _process(delta: float) -> void:
 	update_attack_cooldown(delta)
 	if Input.is_action_just_pressed("attack"):
 		attack()
-	
-	rotate_sprite()
+		
+	if not is_attacking:
+		rotate_sprite()
+		
 	play_animation()
 
 
@@ -105,9 +107,23 @@ func attack() -> void:
 	is_attacking = true
 
 
+# TODO: quando implementar os ataques cima e baixo, arrumar aqui tb
 func deal_damage_to_enemies() -> void:
 	var bodies = sword_area.get_overlapping_bodies()
 	for body in bodies:
 		if body.is_in_group("enemies"):
 			var enemy: Enemy = body
-			enemy.damage(sword_damage)
+			
+			var direction_to_enemy = (enemy.position - position).normalized()
+			var attack_direction: Vector2
+			
+			if sprite.flip_h:
+				attack_direction = Vector2.LEFT
+			else:
+				attack_direction = Vector2.RIGHT
+			
+			var dot_product = direction_to_enemy.dot(attack_direction)
+			# aqui eu indico o angulo que vai causar dano se acertar
+			# limita a area que o inimigo esta pra dar o dano nele
+			if dot_product >= .5: 
+				enemy.damage(sword_damage)
