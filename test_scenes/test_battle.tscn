@@ -12,7 +12,7 @@
 position = Vector2(541, 363)
 
 [node name="Pawn" parent="." instance=ExtResource("2_o0y6e")]
-position = Vector2(875, 345)
+position = Vector2(315, 345)
 
 [node name="Pawn2" parent="." instance=ExtResource("2_o0y6e")]
 position = Vector2(1044, 136)
@@ -21,7 +21,7 @@ position = Vector2(1044, 136)
 position = Vector2(40, 638)
 
 [node name="Goblin" parent="." instance=ExtResource("3_j1t21")]
-position = Vector2(227, 224)
+position = Vector2(790, 179)
 
 [node name="Goblin2" parent="." instance=ExtResource("3_j1t21")]
 position = Vector2(455, 79)

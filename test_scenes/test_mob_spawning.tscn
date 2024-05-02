@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwk07wbyly15i"]
+[gd_scene load_steps=4 format=3 uid="uid://bwk07wbyly15i"]
 
 [ext_resource type="PackedScene" uid="uid://2uu77dlaef04" path="res://systems/mob_spawner.tscn" id="1_lwvly"]
 [ext_resource type="PackedScene" uid="uid://bmkbr783kti7e" path="res://player/player.tscn" id="2_nf4fw"]
+[ext_resource type="PackedScene" uid="uid://bu6i8iv2dk4h7" path="res://misc/ritual.tscn" id="3_6ifcc"]
 
 [node name="TestMobSpawning" type="Node2D"]
 
@@ -10,3 +11,6 @@ mobs_per_minute = 10.0
 
 [node name="Player" parent="." instance=ExtResource("2_nf4fw")]
 position = Vector2(567, 365)
+
+[node name="Ritual" parent="." instance=ExtResource("3_6ifcc")]
+position = Vector2(567, 336)
