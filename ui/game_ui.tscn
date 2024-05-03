@@ -1,7 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bu8yt4xqeb04c"]
+[gd_scene load_steps=10 format=3 uid="uid://bu8yt4xqeb04c"]
 
 [ext_resource type="Script" path="res://ui/game_ui.gd" id="1_38x03"]
 [ext_resource type="Texture2D" uid="uid://01giuwulh5w5" path="res://addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="1_t28k2"]
+[ext_resource type="Texture2D" uid="uid://bixrwjhj2geog" path="res://addons/Tiny Swords/Resources/Resources/M_Idle_(NoShadow).png" id="3_0xn43"]
+
+[sub_resource type="SystemFont" id="SystemFont_sxlei"]
+font_names = PackedStringArray("Consolas")
+
+[sub_resource type="LabelSettings" id="LabelSettings_vko08"]
+font = SubResource("SystemFont_sxlei")
+font_size = 32
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jujgl"]
 texture = ExtResource("1_t28k2")
@@ -24,7 +32,12 @@ multichannel_signed_distance_field = true
 [sub_resource type="LabelSettings" id="LabelSettings_vkwd3"]
 line_spacing = 1.0
 font = SubResource("SystemFont_4sf2a")
+font_size = 32
 font_color = Color(0.148738, 0.148738, 0.148738, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbb8h"]
+atlas = ExtResource("3_0xn43")
+region = Rect2(40, 48, 56, 56)
 
 [node name="GameUi" type="CanvasLayer"]
 script = ExtResource("1_38x03")
@@ -41,6 +54,7 @@ offset_bottom = 43.0
 grow_horizontal = 2
 size_flags_horizontal = 8
 text = "08:50"
+label_settings = SubResource("LabelSettings_vko08")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -48,51 +62,36 @@ vertical_alignment = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -201.0
+offset_left = -184.0
 offset_top = 2.0
-offset_right = 24.0
+offset_right = 41.0
 offset_bottom = 125.0
 grow_horizontal = 0
-scale = Vector2(0.88424, 0.541016)
+scale = Vector2(0.80913, 0.495061)
 theme_override_styles/panel = SubResource("StyleBoxTexture_jujgl")
-
-[node name="GoldLabel" type="Label" parent="Panel2"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -9.58684
-offset_top = -24.5325
-offset_right = 87.4132
-offset_bottom = -1.53248
-grow_horizontal = 2
-grow_vertical = 2
-text = "20.000 Gold
-"
-label_settings = SubResource("LabelSettings_vkwd3")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="MeetLabel" type="Label" parent="Panel2"]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -85.3581
-offset_top = -24.5325
-offset_right = -23.358
-offset_bottom = -1.53249
-grow_horizontal = 2
+offset_left = 117.615
+offset_top = -33.7744
+offset_right = 153.615
+offset_bottom = -0.774384
 grow_vertical = 2
 size_flags_horizontal = 8
-text = "50 Meet
+text = "50
 "
 label_settings = SubResource("LabelSettings_vkwd3")
-horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel2"]
+layout_mode = 0
+offset_left = 45.2366
+offset_top = 5.54512
+offset_right = 173.237
+offset_bottom = 133.545
+scale = Vector2(0.475808, 0.632292)
+texture = SubResource("AtlasTexture_vbb8h")

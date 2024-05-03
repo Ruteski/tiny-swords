@@ -35,6 +35,9 @@ var attack_cooldown: float = 0.0
 var ritual_cooldown: float = 0.0
 
 
+signal meat_collected(value: int)
+
+
 # update da unity
 #func _process(delta: float) -> void:
 	#if Input.is_action_just_pressed("move_up"):
@@ -47,6 +50,8 @@ var ritual_cooldown: float = 0.0
 
 # TODO: adicionar ataques pra cima pra baixo direita e esquerda
 
+func _ready():
+	GameManager.player = self
 
 # update da unity
 func _process(delta: float) -> void:
