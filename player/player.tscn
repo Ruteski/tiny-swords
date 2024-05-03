@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bmkbr783kti7e"]
+[gd_scene load_steps=20 format=3 uid="uid://bmkbr783kti7e"]
 
 [ext_resource type="Texture2D" uid="uid://7a4bf4dlobvx" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_lnlfl"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_sne30"]
@@ -259,6 +259,12 @@ radius = 89.97
 radius = 6.23234
 height = 17.7338
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2xy7"]
+bg_color = Color(0, 0, 0, 0.694118)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1feui"]
+bg_color = Color(0.843856, 0, 0.115275, 1)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_sne30")
 death_prefab = ExtResource("2_vgyfb")
@@ -275,6 +281,7 @@ hframes = 6
 vframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -32)
 shape = SubResource("CapsuleShape2D_xdeoj")
 debug_color = Color(0, 0.6, 0.701961, 0.196078)
@@ -286,6 +293,7 @@ libraries = {
 autoplay = "idle"
 
 [node name="SwordArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwordArea"]
 position = Vector2(4, -38)
@@ -293,9 +301,27 @@ shape = SubResource("CircleShape2D_j3rs2")
 debug_color = Color(0.972549, 0.0313726, 0.423529, 0)
 
 [node name="HitboxArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
 position = Vector2(1, -29)
 scale = Vector2(3.36952, 3.72171)
 shape = SubResource("CapsuleShape2D_3eumv")
 debug_color = Color(1, 0.0196078, 0.0862745, 0.423529)
+
+[node name="HealthProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33.0
+offset_top = 3.0
+offset_right = 31.0
+offset_bottom = 19.0
+grow_horizontal = 2
+scale = Vector2(1.00173, 0.439999)
+theme_override_styles/background = SubResource("StyleBoxFlat_a2xy7")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1feui")
+step = 1.0
+value = 100.0
+rounded = true
+show_percentage = false

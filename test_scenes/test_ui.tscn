@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://co52d0kusajy3"]
+[gd_scene load_steps=7 format=3 uid="uid://co52d0kusajy3"]
 
 [ext_resource type="PackedScene" uid="uid://bmkbr783kti7e" path="res://player/player.tscn" id="1_gg57r"]
 [ext_resource type="Texture2D" uid="uid://01giuwulh5w5" path="res://addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="2_4khiu"]
+[ext_resource type="PackedScene" uid="uid://j47qakf115vr" path="res://enemies/goblin.tscn" id="3_1e67p"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jujgl"]
 texture = ExtResource("2_4khiu")
@@ -97,3 +98,6 @@ text = "50 Meet
 label_settings = SubResource("LabelSettings_vkwd3")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Goblin" parent="." instance=ExtResource("3_1e67p")]
+position = Vector2(688, 373)

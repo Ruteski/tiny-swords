@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var sword_area: Area2D = $SwordArea
 @onready var hitbox_area: Area2D = $HitboxArea
+@onready var health_progress_bar: ProgressBar = $HealthProgressBar
 
 @export_category("Movement")
 @export var speed: int = 3 # ou coloco 3 e multiplico la embaixo por 100?
@@ -68,6 +69,9 @@ func _process(delta: float) -> void:
 	# Ritual
 	update_ritual(delta)
 	
+	# atualiza healt bar
+	health_progress_bar.max_value = max_health
+	health_progress_bar.value = health
 
 
 func update_attack_cooldown(delta: float) -> void:
