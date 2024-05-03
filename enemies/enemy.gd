@@ -7,6 +7,14 @@ extends Node2D
 @export var death_prefab: PackedScene
 @export var deal_damage_amount: int = 2
 
+@onready var damage_digit_marker = $DamageDigitMarker
+
+var damage_ditig_prefab: PackedScene
+
+
+func _ready():
+	damage_ditig_prefab = preload("res://misc/damage_digit.tscn")
+
 
 func damage(amount: int) -> void:
 	health -= amount
@@ -18,6 +26,15 @@ func damage(amount: int) -> void:
 	tween.set_ease(Tween.EASE_IN)
 	tween.set_trans(Tween.TRANS_QUINT)
 	tween.tween_property(self, "modulate", Color.WHITE, 0.3)
+	
+	# cria o damage digit
+	var damage_digit = damage_ditig_prefab.instantiate()
+	damage_digit.value = amount
+	if damage_digit_marker:
+		damage_digit.global_position = damage_digit_marker.global_position
+	else:
+		damage_digit.global_position = global_position
+	get_parent().add_child(damage_digit)
 		
 	if health <= 0:
 		die()
