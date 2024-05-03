@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://bu8yt4xqeb04c"]
+
+[ext_resource type="Script" path="res://ui/game_ui.gd" id="1_38x03"]
+[ext_resource type="Texture2D" uid="uid://01giuwulh5w5" path="res://addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="1_t28k2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jujgl"]
+texture = ExtResource("1_t28k2")
+texture_margin_left = 32.0
+texture_margin_top = 16.0
+texture_margin_right = 32.0
+texture_margin_bottom = 48.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 48, 128, 128)
+
+[sub_resource type="SystemFont" id="SystemFont_4sf2a"]
+font_names = PackedStringArray("Consolas")
+font_weight = 700
+font_stretch = 50
+hinting = 2
+subpixel_positioning = 3
+multichannel_signed_distance_field = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_vkwd3"]
+line_spacing = 1.0
+font = SubResource("SystemFont_4sf2a")
+font_color = Color(0.148738, 0.148738, 0.148738, 1)
+
+[node name="GameUi" type="CanvasLayer"]
+script = ExtResource("1_38x03")
+
+[node name="TimerLabel" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_top = 20.0
+offset_right = 31.0
+offset_bottom = 43.0
+grow_horizontal = 2
+size_flags_horizontal = 8
+text = "08:50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -201.0
+offset_top = 2.0
+offset_right = 24.0
+offset_bottom = 125.0
+grow_horizontal = 0
+scale = Vector2(0.88424, 0.541016)
+theme_override_styles/panel = SubResource("StyleBoxTexture_jujgl")
+
+[node name="GoldLabel" type="Label" parent="Panel2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.58684
+offset_top = -24.5325
+offset_right = 87.4132
+offset_bottom = -1.53248
+grow_horizontal = 2
+grow_vertical = 2
+text = "20.000 Gold
+"
+label_settings = SubResource("LabelSettings_vkwd3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MeetLabel" type="Label" parent="Panel2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.3581
+offset_top = -24.5325
+offset_right = -23.358
+offset_bottom = -1.53249
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+text = "50 Meet
+"
+label_settings = SubResource("LabelSettings_vkwd3")
+horizontal_alignment = 1
+vertical_alignment = 1
