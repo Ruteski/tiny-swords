@@ -55,9 +55,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gdtsj"]
-radius = 21.0
-height = 52.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_kj77u"]
+radius = 14.0
 
 [node name="Pawn" type="CharacterBody2D" groups=["enemies"]]
 motion_mode = 1
@@ -73,8 +72,8 @@ frame = 3
 frame_progress = 0.625664
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -27)
-shape = SubResource("CapsuleShape2D_gdtsj")
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_kj77u")
 debug_color = Color(0, 0.6, 0.701961, 0.270588)
 
 [node name="FollowPlayer" type="Node" parent="."]

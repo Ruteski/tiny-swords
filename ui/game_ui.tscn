@@ -6,6 +6,7 @@
 
 [sub_resource type="SystemFont" id="SystemFont_sxlei"]
 font_names = PackedStringArray("Consolas")
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_vko08"]
 font = SubResource("SystemFont_sxlei")
@@ -62,9 +63,9 @@ vertical_alignment = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -184.0
+offset_left = -164.0
 offset_top = 2.0
-offset_right = 41.0
+offset_right = 36.0
 offset_bottom = 125.0
 grow_horizontal = 0
 scale = Vector2(0.80913, 0.495061)
@@ -76,10 +77,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 117.615
-offset_top = -33.7744
-offset_right = 153.615
-offset_bottom = -0.774384
+offset_left = 101.343
+offset_top = -33.2207
+offset_right = 167.343
+offset_bottom = -0.220657
 grow_vertical = 2
 size_flags_horizontal = 8
 text = "50
@@ -89,9 +90,8 @@ vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Panel2"]
 layout_mode = 0
-offset_left = 45.2366
-offset_top = 5.54512
-offset_right = 173.237
-offset_bottom = 133.545
+offset_left = 44.0
+offset_right = 158.0
+offset_bottom = 131.0
 scale = Vector2(0.475808, 0.632292)
 texture = SubResource("AtlasTexture_vbb8h")
