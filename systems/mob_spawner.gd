@@ -17,6 +17,18 @@ func _process(delta):
 	var interval = 60.0 / mobs_per_minute
 	cooldown = interval
 	
+	# checar se o ponto(get_point) é valido, se esta sendo dentro da 
+	# area jogavel ou fora dela
+	var point = get_point()
+	var world_state = get_world_2d().direct_space_state
+	var parameters = PhysicsPointQueryParameters2D.new()
+	parameters.position = point
+	parameters.collision_mask= 0b1001 # 4321 - ordem leitura da collision mask, no caso colidindo com a layer 4 e 1
+	var max_results: int = 1
+	var result: Array = world_state.intersect_point(parameters, max_results)
+	if not result.is_empty():
+		return
+	
 	var index = randi_range(0, creatures.size() - 1)
 	var creature_scene = creatures[index]
 	var creature = creature_scene.instantiate()
