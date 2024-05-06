@@ -271,7 +271,6 @@ hitbox_cooldown = 0.7
 ritual_damage = 3
 ritual_interval = 15.0
 ritual_scene = ExtResource("3_pnuu8")
-health = 50
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, -33)

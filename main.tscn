@@ -1,5 +1,6 @@
-[gd_scene load_steps=36 format=3 uid="uid://chcydiikbfbg2"]
+[gd_scene load_steps=38 format=3 uid="uid://chcydiikbfbg2"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_1l52f"]
 [ext_resource type="PackedScene" uid="uid://bmkbr783kti7e" path="res://player/player.tscn" id="1_bbk3y"]
 [ext_resource type="PackedScene" uid="uid://2uu77dlaef04" path="res://systems/mob_spawner.tscn" id="2_nls3a"]
 [ext_resource type="PackedScene" uid="uid://bu8yt4xqeb04c" path="res://ui/game_ui.tscn" id="3_11hxn"]
@@ -18,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://1d1aqnlbb2wr" path="res://addons/Tiny Swords/Deco/10.png" id="14_oq80p"]
 [ext_resource type="PackedScene" uid="uid://crpwqvhckkciu" path="res://misc/tree.tscn" id="17_nhbwt"]
 [ext_resource type="Script" path="res://systems/difficulty_system.gd" id="17_nnits"]
+[ext_resource type="PackedScene" uid="uid://d4jf0le3xyyfs" path="res://ui/game_over_ui.tscn" id="19_1efec"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fet8v"]
 texture = ExtResource("4_j7t6b")
@@ -186,8 +188,11 @@ size = Vector2(14.1147, 74.3059)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1jr6"]
 size = Vector2(12.7228, 74.3059)
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("game_ui")]
 y_sort_enabled = true
+script = ExtResource("1_1l52f")
+game_ui = NodePath("GameUi")
+game_over_template = ExtResource("19_1efec")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -232,7 +237,12 @@ debug_color = Color(1, 0.323412, 0.294531, 0.42)
 
 [node name="Player" parent="." instance=ExtResource("1_bbk3y")]
 position = Vector2(445, 277)
-health = 100
+speed = null
+speed_factor = null
+lerp_factor = null
+sword_damage = null
+health = null
+max_health = null
 
 [node name="RemoteTransform2D-Camera" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")

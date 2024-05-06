@@ -9,6 +9,9 @@ var mobs_per_minute: float = 60.0
 
 
 func _process(delta):
+	if GameManager.is_game_over: 
+		return 
+		
 	cooldown -= delta
 	if cooldown > 0:
 		return

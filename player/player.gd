@@ -52,6 +52,7 @@ signal meat_collected(value: int)
 
 func _ready():
 	GameManager.player = self
+	meat_collected.connect(func(value: int): GameManager.meat_count += 1)
 
 # update da unity
 func _process(delta: float) -> void:
@@ -197,11 +198,14 @@ func update_hitbox_detection(delta: float) -> void:
 
 
 func die() -> void:
+	GameManager.end_game()
+	
 	if death_prefab:
 		var death_object = death_prefab.instantiate()
 		death_object.position = position
 		get_parent().add_child(death_object)
-		
+	
+	print("Player morreu")
 	queue_free()
 
 
