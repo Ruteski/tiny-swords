@@ -1,12 +1,11 @@
-extends Node2D
-
+class_name MobSpawner extends Node2D
 
 @export var creatures: Array[PackedScene]
-@export var mobs_per_minute: float = 60.0
 @export var cooldown: float = 0.0
 
-
 @onready var path_follow_2d: PathFollow2D = %PathFollow2D
+
+var mobs_per_minute: float = 60.0
 
 
 func _process(delta):
